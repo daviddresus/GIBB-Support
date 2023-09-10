@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App_LB2_David.Pages.InfoPage"
+             Title="InfoPage">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False"/>
+    </Shell.BackButtonBehavior>
+    
+    <ScrollView Padding="0, 0, 0, 50" VerticalScrollBarVisibility="Never">
+            <StackLayout>
+                <AbsoluteLayout>
+                    <Image Source="gibb_support_logo.png"
+                           HeightRequest="75"
+                           TranslationX="20"
+                           TranslationY="20"/>
+                </AbsoluteLayout>
+
+                <AbsoluteLayout>
+                    <ImageButton Source="back_button.png"
+                                 HeightRequest="50"
+                                 TranslationX="20"
+                                 TranslationY="40"
+                                 Clicked="GoBackToMainPage"/>
+                </AbsoluteLayout>
+
+            <Label Text="Infoseite"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="Header"
+                   HorizontalOptions="Center"
+                   Margin="0,25,0,0"/>
+
+            <Label Text="Struktur:"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="34"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+
+            <Border Stroke="white"
+                    StrokeThickness="1"
+                    WidthRequest="1100"
+                    Margin="0,0,0,40">
+                <ListView ItemsSource="{Binding Pages}" WidthRequest="1100">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2"
+                                           Source="{Binding ImageUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="360"
+                                           WidthRequest="720" />
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold"
+                                           Margin="25,0,0,0"
+                                           WidthRequest="325"
+                                           LineBreakMode="WordWrap" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           Text="{Binding Description}"
+                                           FontAttributes="Italic"
+                                           VerticalOptions="End"
+                                           Margin="25,0,0,0"
+                                           WidthRequest="325"
+                                           LineBreakMode="WordWrap" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+            <Line X2="1200" 
+                  Stroke="#7C4DFF"
+                  StrokeThickness="7"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  HeightRequest="10"/>
+
+            <!--FAQ-->
+            <Label Text="FAQ:"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="34"
+                   HorizontalOptions="Center"
+                   Margin="0,40,0,10"/>
+
+            <!--Question (bold)-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Was kann ich mit dieser App machen?" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Answer-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="1100"
+                   Margin="0,0,0,40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Diese App ist eine Support App, welche den User Hilfe anbieten soll, indem der User seine Frage auf dieser App findet und danach die Antwort / Lösung dazu liest. Diese App soll vor allem für gibb Schüler nützlich sein."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Question (bold)-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Wie kann ich mit dem Bedienen anfangen?" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Answer-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="1100"
+                   Margin="0,0,0,40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bei der Startseite (siehe zweites Bild von oben nach unten der Struktur) können sie sich zwischen zwei Wege entscheiden. Entweder nutzen sie das Eingabefeld, indem sie ihre Frage hineinschreiben oder bei den Oberthemen können sie ihr gesuchtes Oberthema anklicken und danach ihre entsprechende Frage anklicken, die ihnen zur Verfügung steht."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Question (bold)-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Wie kann ich eine Frage suchen, ohne dass ich das Eingabefeld benutzen muss?" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Answer-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="1100"
+                   Margin="0,0,0,40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Unterhalb des Eingabefelds befinden sich jeweils die Oberthemen. Diese können sie anklicken und danach werden ihnen die Fragen dazu gezeigt, welche sie danach anklicken können."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Question (bold)-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Kann man seine Meinung zur Antwort auf die gesuchte Frage hinterlassen?" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Answer-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="1100"
+                   Margin="0,0,0,40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Ja, kann man! Bei jeder Frageseite befindet sich jeweils die Abteilung der Kommentare ganz zuunterst (nach der Antwort / Lösung). Andere Kommentare sowie ihr eigener Kommentar werden hier angezeigt. Beim Eingabefeld (siehe viertes Bild von oben nach unten der Struktur) können sie ihre Meinung schreiben und danach diesen Kommentar abschicken."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Question (bold)-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Wie kann ich Fragen anzeigen lassen, die erst seit einer bestimmten Zeit beantwortet / erstellt worden sind?" FontAttributes="Bold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!--Answer-->
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   WidthRequest="1100"
+                   Margin="0,0,0,40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bei der Startseite befindet sich unterhalb des Eingabefelds einen Bereich dazu. Es gibt zwei Daten, die man angeben muss: Das 'von' Datum und das 'bis' Datum. Danach werden alle Fragen angezeigt, die zwischen dieser Zeit erstellt worden sind (nachdem sie denn 'weiter' Knopf gedrückt haben)."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

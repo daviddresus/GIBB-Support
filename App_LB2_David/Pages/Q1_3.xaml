@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-App_LB2_David:Q1_3"
+             x:Class="App_LB2_David.Pages.Q1_3"
+             Title="Q1_3">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False"/>
+    </Shell.BackButtonBehavior>
+
+    <ScrollView Padding="0, 0, 0, 50" VerticalScrollBarVisibility="Never">
+        <StackLayout>
+            <AbsoluteLayout>
+                <Image Source="gibb_support_logo.png"
+                   HeightRequest="75"
+                   TranslationX="20"
+                   TranslationY="20"/>
+            </AbsoluteLayout>
+
+            <Frame BackgroundColor="#7C4DFF"
+                   Margin="500,-50,500,0">
+
+                <Label Text="Von wo kann ich neue VMs herunterladen?"
+                       FontSize="18"
+                       HorizontalTextAlignment="Center"/>
+            </Frame>
+
+            <AbsoluteLayout>
+                <Label Text="Erstellt am:"
+                       FontSize="18"
+                       TextColor="White"
+                       TranslationX="1790"
+                       TranslationY="-60"/>
+
+                <Label Text="1/1/2023"
+                       FontSize="18"
+                       TextColor="White"
+                       TranslationX="1790"
+                       TranslationY="-35"
+                       x:Name="Date"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout>
+                <ImageButton Source="back_button.png"
+                             HeightRequest="50"
+                             TranslationX="20"
+                             TranslationY="10"
+                             Clicked="GoBackToMainPage"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout>
+                <Frame BackgroundColor="#DF5BC0"
+                       TranslationX="1550"
+                       TranslationY="-25"
+                       IsVisible="false"
+                       x:Name="Alert">
+
+                    <StackLayout HorizontalOptions="Start">
+
+                        <Label FontSize="24"
+                               HorizontalOptions="Center"
+                               Margin="0,0,0,5">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Achtung!"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Line X2="250" 
+                              Stroke="#B8028D"
+                              StrokeThickness="7"
+                              HorizontalOptions="Center"
+                              HeightRequest="10"/>
+
+                        <Label FontSize="18"
+                               Margin="0,5,0,0"
+                               WidthRequest="300">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Ihr Kommentar ist nicht vollständig! Folgendes könnte noch fehlen:"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label FontSize="18"
+                               Margin="0,20,0,0"
+                               WidthRequest="300">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="- Bewertung (von 1-5 Sterne)"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Label FontSize="18"
+                               Margin="0,0,0,0"
+                               WidthRequest="300">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="- Text (Inhalt ist leer)"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+            </AbsoluteLayout>
+
+        <StackLayout x:Name="FixedLayout">
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   Margin="510,-40,510,0">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Öffnen sie ihr Browser und geben sie"/>
+                        <Span Text=" 'Portal IET'" FontAttributes="Bold"/>
+                        <Span Text=" ein. Drücken sie auf den ersten Link. Die Seite sieht so aus:"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image Source="gibb_website.png"
+                   WidthRequest="450"
+                   Margin="0,20,0,0"/>
+
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   Margin="510,20,510,0">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Als Nächstes scrollen sie ein wenig nach unten bis sie"/>
+                        <Span Text=" 'Filestash'" FontAttributes="Bold"/>
+                        <Span Text=" sehen (unter #Berufe der IET). Klicken sie es an und sie gelangen auf einer neuen Seite. Von hier aus müssen sie dann nur noch diesen Pfad befolgen:"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   TextColor="Aqua"
+                   Margin="510,20,510,0">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="sh-smartlearn/3_archive/."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   Margin="510,20,510,0">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bei dieser Seite stehen ihnen alle VMs zur Verfügung."/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image Source="gibb_filestash.png"
+                   WidthRequest="450"
+                   Margin="0,20,0,0"/>
+
+            <Label Text="War dieser Text hilfreich?"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,50,0,0"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <RadioButton Content="Ja" GroupName="YesNoGruop" HorizontalOptions="Center" Margin="0,0,20,0"/>
+                <RadioButton Content="Nein" GroupName="YesNoGruop" HorizontalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Kommentare:"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="34"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0"/>
+
+            <!--Draws a line. X1, Y1 and Y2 are by default "0", meaning that X2 is equal to the width of the line-->
+            <Line X2="220" 
+                  Stroke="#7C4DFF"
+                  StrokeThickness="7"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  HeightRequest="10"/>
+
+            <!--This is a comment (in the app)-->
+            <Frame BackgroundColor="#A484FF"
+                   Margin="650,50,650,0">
+
+                <StackLayout HorizontalOptions="Start">
+
+                    <Label FontSize="18">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="28.12.2022"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label FontSize="18"
+                       Margin="0,20,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="..."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+            <!--This is a comment (in the app)-->
+            <Frame BackgroundColor="#A484FF"
+                   Margin="650,50,650,0">
+
+                <StackLayout HorizontalOptions="Start">
+
+                    <Label FontSize="18">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="28.12.2022"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label FontSize="18"
+                       Margin="0,20,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="..."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+        <Border WidthRequest="625"
+                    HeightRequest="40"
+                    Stroke="white"
+                    BackgroundColor="white"
+                    StrokeThickness="1"
+                    Margin="0,40,0,0"
+                    x:Name="EntryBorder">
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="40,40,40,40"/>
+            </Border.StrokeShape>
+
+            <StackLayout>
+                <Label Text="{Binding Source={x:Static System:DateTime.Now}, StringFormat='{0:dd/MM/yyyy}'}"
+                           FontSize="18"
+                           TextColor="Black"
+                           Margin="30,20,0,-60"
+                           IsVisible="False"
+                           x:Name="CommentEntryElement1"/>
+
+                <Stepper IsVisible="false"
+                             x:Name="CommentEntryElement2_1"
+                             TranslationX="300"
+                             TranslationY="35"
+                             BackgroundColor="#A484FF"
+                             Increment="1"
+                             Maximum="5"
+                             Minimum="0"
+                             Value="0"
+                             ValueChanged="RatingChanged"/>
+
+                <Image Source="rating_0.png"
+                               HeightRequest="40"
+                               TranslationX="175"
+                               TranslationY="-8"
+                               IsVisible="False"
+                               x:Name="CommentEntryElement2_2"/>
+
+                <Line X2="565" 
+                          Stroke="#7C4DFF"
+                          StrokeThickness="7"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center"
+                          HeightRequest="10"
+                          IsVisible="False"
+                          x:Name="CommentEntryElement3"/>
+
+                <Button Text="Kommentarfeld öffnen"
+                            Clicked="ExpandTheEntry"
+                            WidthRequest="700"
+                            HeightRequest="50"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            TranslationY="-5"
+                            x:Name="OpenCommentButton"/>
+
+                <Entry Placeholder="Schreiben sie hier ihre Meinung zu diesem Text:"
+                           x:Name="CommentEntry"
+                           TextChanged="OnEntryTextChanged"
+                           Completed="OnEntryCompleted" 
+                           BackgroundColor="white"
+                           HeightRequest="40"
+                           WidthRequest="565"
+                           Margin="0,10,0,0"
+                           PlaceholderColor="Gray"
+                           VerticalTextAlignment="Start"
+                           HorizontalTextAlignment="Center"
+                           ClearButtonVisibility="WhileEditing"
+                           IsVisible="false"/>
+
+                <ImageButton Source="trash_can.png"
+                                 HeightRequest="1"
+                                 TranslationX="-265"
+                                 TranslationY="30"
+                                 IsVisible="False"
+                                 x:Name="CommentEntryElement4"
+                                 Clicked="ShrinkTheEntryDelete"/>
+
+                <ImageButton Source="send_button.png"
+                                 HeightRequest="1"
+                                 TranslationX="260"
+                                 TranslationY="-12"
+                                 IsVisible="False"
+                                 x:Name="CommentEntryElement5"
+                                 Clicked="ShrinkTheEntrySend"/>
+            </StackLayout>
+        </Border>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

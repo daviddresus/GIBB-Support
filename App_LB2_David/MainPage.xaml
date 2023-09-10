@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-App_LB2_David:MainPage"
+             x:Class="App_LB2_David.MainPage">
+
+    <ScrollView Padding="0, 0, 0, 50" VerticalScrollBarVisibility="Never">
+        <StackLayout>
+
+        <AbsoluteLayout>
+            <Image Source="gibb_support_logo.png"
+                   HeightRequest="75"
+                   TranslationX="20"
+                   TranslationY="20"
+                   x:Name="logo"/>
+        </AbsoluteLayout>
+
+        <AbsoluteLayout>
+            <ImageButton Source="info_button.png"
+                         HeightRequest="50"
+                         TranslationX="1825"
+                         TranslationY="-50"
+                         Clicked="InfoButtonClicked"/>
+        </AbsoluteLayout>
+
+        <AbsoluteLayout>
+            <Button Text="Weiter"
+                    BackgroundColor="#7C4DFF"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    TranslationX="1300"
+                    TranslationY="165"
+                    Clicked="AskedQuestion"
+                    CornerRadius="4"
+                    Pressed="Button_Pressed"/>
+        </AbsoluteLayout>
+
+            <Label Text="Gibb Support"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="Header"
+                   HorizontalOptions="Center"
+                   Margin="0,25,0,0"/>
+            
+            <Border WidthRequest="600"
+                    HeightRequest="70"
+                    Stroke="white"
+                    Background="white"
+                    StrokeThickness="1"
+                    Margin="0,25,0,0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="40,40,40,40"/>
+                    </Border.StrokeShape>
+
+                    <Entry Placeholder="Schreiben Sie hier Ihre Frage rein ('.,-' sind erlaubt, alle andere Zeichen nicht):"
+                           x:Name="QuestionEntry"
+                           TextChanged="OnEntryTextChanged"
+                           Completed="OnEntryCompleted" 
+                           BackgroundColor="White"
+                           HeightRequest="70"
+                           WidthRequest="600"
+                           PlaceholderColor="Gray"
+                           TextColor="black"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           ClearButtonVisibility="WhileEditing"/>
+                </Border>
+
+                <Label Text="Erstellungsdatum:"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Margin="0,50,0,0"/>
+
+            <!--The MinimumDate makes it so that the user can't go back more than the defined value. For example: 31/12/2022 wouldn't be allowed-->
+            <!--Date is the Displayed Value (limited. Can only go until year 2100)-->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Zwischen:"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="18"
+                       VerticalTextAlignment="Center"
+                       TranslationY="5"
+                       Margin="0,0,10,0"/>
+                
+                <DatePicker Format="dd/MM/yyyy"
+                            MinimumDate="1/1/2023"
+                            MaximumDate="12/1/2099"
+                            Date="1/1/2023"
+                            BackgroundColor="#A484FF"
+                            HeightRequest="50"
+                            TextColor="White"
+                            Margin="0,10,40,0"
+                            DateSelected="DefineMinDate"
+                            x:Name="FromDate"/>
+
+                <Label Text="Und:"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       FontSize="18"
+                       VerticalTextAlignment="Center"
+                       TranslationY="5"
+                       Margin="0,0,10,0"/>
+
+                <DatePicker Format="dd/MM/yyyy"
+                            MinimumDate="{Binding MinDate}"
+                            MaximumDate="12/1/2099"
+                            Date="1/1/2023"
+                            BackgroundColor="#A484FF"
+                            HeightRequest="50"
+                            TextColor="White"
+                            Margin="0,10,0,0"
+                            x:Name="UntilDate"/>
+
+                <Button Text="Weiter"
+                        BackgroundColor="#7C4DFF"
+                        WidthRequest="100"
+                        HeightRequest="50"
+                        TranslationY="5"
+                        Margin="40,0,0,0"
+                        Clicked="DisplayOnlyMatchingDates"
+                        CornerRadius="4"
+                        Pressed="Button_Pressed"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Nur Fragen Anzeigen:"
+                   FontSize="18"
+                   Margin="0,20,0,10"
+                   HorizontalTextAlignment="Center"/>
+
+            <Switch HorizontalOptions="Center"
+                    TranslationX="50"
+                    Toggled="Display_Themes"
+                    x:Name="ThemeSwitch"/>
+
+            <Label Text="Oberthemen:"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontSize="34"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0"/>
+            
+            <!--Draws a line. X1, Y1 and Y2 are by default "0", meaning that X2 is equal to the width of the line-->
+            <Line X2="220" 
+                  Stroke="#7C4DFF"
+                  StrokeThickness="7"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  HeightRequest="10"/>
+
+            <!--VMs im allgemeinen-->
+        <Button Text="VMs im allgemeinen"
+                BackgroundColor="#7C4DFF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                Clicked="Button_Clicked"
+                x:Name="Button_1"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="Wie kann man eine VM aufstarten?"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                Clicked="Question_Clicked_1_1"
+                x:Name="Button_1_1"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="Wie kann ich mehr RAM / CPU Cores an eine VM geben?"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                Clicked="Question_Clicked_1_2"
+                x:Name="Button_1_2"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="Von wo kann ich neue VMs herunterladen?"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                Clicked="Question_Clicked_1_3"
+                x:Name="Button_1_3"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="Warum funktioniert meine VM nicht?"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                Clicked="Question_Clicked_1_4"
+                x:Name="Button_1_4"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <!--Lema (Website, SQL, usw.)-->
+        <Button Text="Lema (Website, SQL, usw.)"
+                BackgroundColor="#7C4DFF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                Clicked="Button_Clicked"
+                x:Name="Button_2"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="Wie kann ich den Link finden, der mich auf meiner Website führt?"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                Clicked="Question_Clicked_2_1"
+                x:Name="Button_2_1"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <Button Text="'Frage'"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                x:Name="Button_2_2"
+                Pressed="Button_Pressed">
+        </Button>
+
+        <!--Smartlearn-->
+        <Button Text="Smartlearn"
+                BackgroundColor="#7C4DFF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                Clicked="Button_Clicked"
+                x:Name="Button_3"
+                Pressed="Button_Pressed">
+        </Button>
+
+            <Button Text="'Frage'"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                x:Name="Button_3_1"
+                Pressed="Button_Pressed">
+        </Button>
+
+            <Button Text="'Frage'"
+                BackgroundColor="#A484FF"
+                WidthRequest="700"
+                HeightRequest="50"
+                Margin="0,25,0,0"
+                IsVisible="False"
+                x:Name="Button_3_2"
+                Pressed="Button_Pressed">
+            </Button>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

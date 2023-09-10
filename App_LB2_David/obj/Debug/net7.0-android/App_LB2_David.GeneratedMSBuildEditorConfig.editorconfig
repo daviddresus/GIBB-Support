@@ -1,0 +1,87 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = App_LB2_David
+build_property.ProjectDir = C:\Users\David Rodrigues\Desktop\App_LB2_David\App_LB2_David\
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/AskedQuestionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.AskedQuestionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AskedQuestionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AskedQuestionPage.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/InfoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.InfoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\InfoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\InfoPage.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/Q1_1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.Q1_1.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Q1_1.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Q1_1.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/Q1_2.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.Q1_2.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Q1_2.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Q1_2.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/Q1_3.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.Q1_3.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Q1_3.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Q1_3.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/Q1_4.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.Q1_4.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Q1_4.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Q1_4.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Pages/Q2_1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Pages.Q2_1.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Q2_1.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Q2_1.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/David Rodrigues/Desktop/App_LB2_David/App_LB2_David/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = App_LB2_David.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

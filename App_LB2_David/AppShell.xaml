@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="App_LB2_David.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:App_LB2_David"
+    xmlns:pages="clr-namespace:App_LB2_David.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"> <!--Disables The Default Bar At the Top of the Page-->
+
+    <ShellContent
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+
+    <ShellContent ContentTemplate="{DataTemplate pages:Q1_1}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Q1_2}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Q1_3}"/>
+    <ShellContent ContentTemplate="{DataTemplate pages:Q1_4}"/>
+    
+    <ShellContent ContentTemplate="{DataTemplate pages:Q2_1}"/>
+
+    <ShellContent ContentTemplate="{DataTemplate pages:InfoPage}"/>
+    
+    <ShellContent ContentTemplate="{DataTemplate pages:AskedQuestionPage}"/>
+</Shell>
